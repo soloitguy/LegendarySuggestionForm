@@ -1,0 +1,155 @@
+Name: Prospector
+Description: This perk increases your mining yield when mining stone, metal and sulfur nodes.
+
+Name: Lumberjack
+Description: This perk increases your woodcutting yield when chopping living or dead trees.
+
+Name: Butcher
+Description: This perk increases the resources gained from skinning humans and animals.
+
+Name: Horticulture
+Description: This perk increases the amount of resources gained when harvesting grown plants.
+
+Name: Forager
+Description: This perk increases the amount of resources gained when picking up map generated collectibles.
+
+Name: Angler
+Description: This perk increases the amount of fish you receive upon a successful catch.
+
+Name: BeastBane
+Description: This perk increases the damage dealt to animals.
+
+Name: ScientistBane
+Description: This perk increases the damage dealt to scientists.
+
+Name: FlakJacket
+Description: This perk reduces the damage received from explosions.
+
+Name: Elemental
+Description: This perk reduces damage from received from cold and heat sources.
+
+Name: Scavenger
+Description: This perk provides you with a chance to find additional scrap from crates and barrels.
+
+Name: Manufacture
+Description: This perk increases the speed of your crafting.
+
+Name: Durable
+Description: This peark reduces the durability damage of all equipped items.
+
+Name: BeastWard
+Description: This perk reduces the damage received from animals.
+
+Name: ScientistWard
+Description: This perk reduces the damage received from scientists.
+
+Name: Builder
+Description: This perk provides you with a chance for your building upgrades to be free.
+
+Name: Thrifty
+Description: This perk provides you with a chance for your crafting components to be refunded upon a successful craft.
+
+Name: Fabricate
+Description: This perk provides you with a chance to duplicate an item upon a successful craft.
+
+Name: Pharmaceutical
+Description: This perk increases the amount of healing received from all sources.
+
+Name: MeleeWard
+Description: This perk reduces the damage received from melee weapons.
+
+Name: Academic
+Description: This perk provides you with a chance to receive a scrap refund when researching an item at the research bench.
+
+Name: FallDamage
+Description: This perk reduces the impact damage received from falling.
+
+Name: Lead
+Description: This perk reduces the damage from radiation.
+
+Name: Smasher
+Description: This perk will provide you with a chance to instantly destroy barrels with any amount of damage.
+
+Name: Environmentalist
+Description: This perk will increase the speed of recyclers that you activate.
+
+Name: Smelter
+Description: This perk will increase the smelting speed of furnaces you activate.
+
+Name: Paramedic
+Description: This perk provides players that you revive with additional health.
+
+Name: Prepper
+Description: This perk provides you with a chance to not consume food when eating.
+
+Name: Regeneration
+Description: This perk will passively regenerate you.
+
+Name: SharkWard
+Description: This perk will reduce the amount of damage received from sharks.
+
+Name: SharkBane
+Description: This perk will increase the amount of damage dealt to sharks.
+
+Name: Deforest
+Description: This perk provides you with a chance to cut down nearby trees when successfully cutting a tree down.
+
+Name: BlastMine
+Description: This perk provides you with a chance to mine out nearby nodes when successfully mining out a node.
+
+Name: Tanner
+Description: This perk provides you with a chance to skin nearby corpses when successfully skinning out a corpse.
+
+Name: Vampiric
+Description: This perk will heal you for a percentage of the damage dealt to certain enemies.
+
+Name: Reinforced
+Description: This perk will reduce the the amount of damage that your vehicles receive when mounted.
+
+Name: ComponentLuck
+Description: This perk will provide you with a chance to receive additional components when looting barrels and crates.
+
+Name: ElectronicsLuck
+Description: This perk will provide you with a chance to receive additional electronics when looting barrels and crates.
+
+Name: UncannyDodge
+Description: This perk provides you with a chance to dodge incoming damage, reducing it to 0.
+
+Name: LineStrength
+Description: This perk increases the tensile strength of your fishing line.
+
+Name: HealShare
+Description: This perk will share healing effects with nearby players.
+
+Name: Attractive
+Description: This perk will provide you with a chance to automatically pick up components when destroying barrels.
+
+Name: WoodcuttingLuck
+Description: This perk provides you with a chance to find a random item when you cut down a tree.
+
+Name: MiningLuck
+Description: This perk provides you with a chance to find a random item when you mine out a node.
+
+Name: SkinningLuck
+Description: This perk provides you with a chance to find a random item when you skin out a corpse.
+
+Name: FishingLuck
+Description: This perk provides you with a chance to find a random item when you catch a fish.
+
+Name: Sated
+Description: This perk will increase the amount of calories and hydration you receive from food and water sources.
+
+Name: IronStomach
+Description: This perk provides you with a chance to negate negative effects when consuming food.
+
+Name: TreePlanter
+Description: This perk will provide a chance for a tree to instantly regrow when cut down.
+
+Name: RockCycler
+Description: This perk will provide a chance for a node to instantly respawn when mined out.
+
+Name: BradleyDamage
+Description: This perk perk increases the damage dealt to Bradley Tanks.
+
+Name: HeliDamage
+Description: This perk perk increases the damage dealt to Patrol Helicopters.
