@@ -34,8 +34,8 @@ export async function addSuggestion(s: Omit<Suggestion, 'id' | 'createdAt'>): Pr
 
 export async function listSuggestions(): Promise<Suggestion[]> {
   if (kv) {
-    const raw: string[] = await kv.lrange(LIST_KEY, 0, -1)
-    return raw.map(r => JSON.parse(r))
+    const raw: any[] = await kv.lrange(LIST_KEY, 0, -1)
+    return raw.map((r: any) => typeof r === 'string' ? JSON.parse(r) : r)
   }
   return MEM_KEY
 }
