@@ -1,7 +1,8 @@
 import { addSuggestion, listSuggestions } from '@/lib/db'
 
 export async function GET() {
-  return Response.json(listSuggestions())
+  const items = await listSuggestions()
+  return Response.json(items)
 }
 
 export async function POST(req: Request) {
@@ -20,7 +21,7 @@ export async function POST(req: Request) {
           .map((e: any) => ({ name: String(e.name), percent: Math.max(0, Math.min(100, Number(e.percent))) }))
       : []
 
-    const row = addSuggestion({ itemName, itemShortcode, enchants: cleanEnchants, skinUrl, skinImage })
+    const row = await addSuggestion({ itemName, itemShortcode, enchants: cleanEnchants, skinUrl, skinImage })
     return Response.json(row, { status: 201 })
   } catch (e: any) {
     return new Response('Invalid JSON', { status: 400 })

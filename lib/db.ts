@@ -9,15 +9,34 @@ export type Suggestion = {
   skinImage?: string
 }
 
-const mem: Suggestion[] = []
+// Optional Vercel KV (falls back to in-memory during local dev without envs)
+let kv: any | undefined
+try {
+  // Lazy require to avoid build-time issues if envs are missing locally
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  const mod = require('@vercel/kv')
+  kv = mod.kv
+} catch {}
 
-export function addSuggestion(s: Omit<Suggestion, 'id' | 'createdAt'>): Suggestion {
+const MEM_KEY: Suggestion[] = []
+const LIST_KEY = 'suggestions'
+
+export async function addSuggestion(s: Omit<Suggestion, 'id' | 'createdAt'>): Promise<Suggestion> {
   const row: Suggestion = { id: crypto.randomUUID(), createdAt: Date.now(), ...s }
-  mem.unshift(row)
+  if (kv) {
+    // Store newest first
+    await kv.lpush(LIST_KEY, JSON.stringify(row))
+  } else {
+    MEM_KEY.unshift(row)
+  }
   return row
 }
 
-export function listSuggestions(): Suggestion[] {
-  return mem
+export async function listSuggestions(): Promise<Suggestion[]> {
+  if (kv) {
+    const raw: string[] = await kv.lrange(LIST_KEY, 0, -1)
+    return raw.map(r => JSON.parse(r))
+  }
+  return MEM_KEY
 }
 
