@@ -79,8 +79,8 @@ export default function Page() {
 
   return (
     <div className="card">
-      <form onSubmit={submit} className="grid" style={{ gridTemplateColumns: '2fr 1fr' }}>
-        <div style={{ display: 'grid', gap: 12 }}>
+      <form onSubmit={submit} className="form-container">
+        <div className="form-main">
           <div className="field">
             <label>Item Name</label>
             <input value={itemName} onChange={e=>setItemName(e.target.value)} placeholder="e.g. Toxic AK of the Dead" required />
@@ -97,9 +97,9 @@ export default function Page() {
 
           <div className="field">
             <label>Enchantments (up to 3)</label>
-            <div style={{ display: 'grid', gap: 8 }}>
+            <div className="enchants-container">
               {enchants.map((en, idx) => (
-                <div key={idx} className="ench-row">
+                <div key={idx} className="enchant-row">
                   <select
                     value={en.name}
                     onChange={e=>setEnchant(idx, { name: e.target.value })}
@@ -107,22 +107,31 @@ export default function Page() {
                     <option value="">Select enchant…</option>
                     {enchOptions.map(n => <option key={n} value={n}>{n}</option>)}
                   </select>
-                  <input type="number" min={0} max={100} value={en.percent}
-                         onChange={e=>setEnchant(idx, { percent: Number(e.target.value) })}
-                         placeholder="Percent" />
-                  <button type="button" className="btn" onClick={()=>removeEnchant(idx)} aria-label="Remove enchant">✕</button>
+                  <div className="enchant-controls">
+                    <input type="number" min={0} max={100} value={en.percent}
+                           onChange={e=>setEnchant(idx, { percent: Number(e.target.value) })}
+                           placeholder="%" />
+                    <button type="button" className="btn-small" onClick={()=>removeEnchant(idx)} aria-label="Remove enchant">✕</button>
+                  </div>
                 </div>
               ))}
-              <div>
+              <div className="add-enchant">
                 <button type="button" className="btn" onClick={addEnchant} disabled={enchants.length>=3}>+ Add Enchant</button>
-                <span className="small" style={{ marginLeft: 8 }}>
+                <span className="small">
                   Pick unique enchants. Values are 0–100%.
                 </span>
               </div>
             </div>
           </div>
 
-          <div className="row" style={{ justifyContent: 'flex-start', gap: 12 }}>
+          <div className="field">
+            <label>Link to Skin (Steam Workshop) *</label>
+            <input value={skinUrl} onChange={e=>setSkinUrl(e.target.value)} onBlur={lookupSkin}
+                   placeholder="https://steamcommunity.com/sharedfiles/filedetails/?id=…" required />
+            <span className="small">We try to pull the preview image via OpenGraph.</span>
+          </div>
+
+          <div className="submit-section">
             <button className="btn" disabled={saving}>
               {saving ? 'Submitting…' : 'Submit Suggestion'}
             </button>
@@ -130,13 +139,7 @@ export default function Page() {
           </div>
         </div>
 
-        <div style={{ display: 'grid', gap: 12 }}>
-          <div className="field">
-            <label>Link to Skin (Steam Workshop) *</label>
-            <input value={skinUrl} onChange={e=>setSkinUrl(e.target.value)} onBlur={lookupSkin}
-                   placeholder="https://steamcommunity.com/sharedfiles/filedetails/?id=…" required />
-            <span className="small">We try to pull the preview image via OpenGraph.</span>
-          </div>
+        <div className="preview-section">
           <div className="preview">
             {skinImage ? (
               // eslint-disable-next-line @next/next/no-img-element
