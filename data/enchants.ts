@@ -37,7 +37,7 @@ export const ENCHANTS: Enchant[] = [
   { name: 'Tanner', description: 'Chance to skin nearby corpses on success.' },
   { name: 'Vampiric', description: 'Heal for a percent of damage dealt.' },
   { name: 'Reinforced', description: 'Reduces vehicle damage while mounted.' },
-  { name: 'Thorny', description: 'Chance to reflect damage back to the attacker.' },
+  { name: 'Thorns', description: 'Chance to reflect damage back to the attacker.' },
   { name: 'ComponentLuck', description: 'Chance to receive extra components from barrels/crates.' },
   { name: 'ElectronicsLuck', description: 'Chance to receive extra electronics from barrels/crates.' },
   { name: 'UncannyDodge', description: 'Chance to dodge incoming damage (0 damage).' },
