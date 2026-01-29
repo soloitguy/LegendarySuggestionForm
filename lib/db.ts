@@ -14,8 +14,12 @@ let kv: any | undefined
 try {
   // Lazy require to avoid build-time issues if envs are missing locally
   // eslint-disable-next-line @typescript-eslint/no-var-requires
-  const mod = require('@vercel/kv')
-  kv = mod.kv
+  const { createClient } = require('@vercel/kv')
+  const url = process.env.NEWKV_KV_REST_API_URL
+  const token = process.env.NEWKV_KV_REST_API_TOKEN
+  if (url && token) {
+    kv = createClient({ url, token })
+  }
 } catch {}
 
 const MEM_KEY: Suggestion[] = []
