@@ -48,13 +48,6 @@ export default function Page() {
 
   async function submit(e: React.FormEvent) {
     e.preventDefault()
-    
-    // Validate required fields
-    if (!skinUrl.trim()) {
-      alert('Steam Workshop link is required')
-      return
-    }
-    
     setSaving(true)
     try {
       const body = {
@@ -125,10 +118,10 @@ export default function Page() {
           </div>
 
           <div className="field">
-            <label>Link to Skin (Steam Workshop) *</label>
+            <label>Link to Skin (Steam Workshop)</label>
             <input value={skinUrl} onChange={e=>setSkinUrl(e.target.value)} onBlur={lookupSkin}
-                   placeholder="https://steamcommunity.com/sharedfiles/filedetails/?id=…" required />
-            <span className="small">We try to pull the preview image via OpenGraph.</span>
+                   placeholder="https://steamcommunity.com/sharedfiles/filedetails/?id=…" />
+            <span className="small">Optional – some items don't have workshop skins.</span>
           </div>
 
           <div className="submit-section">

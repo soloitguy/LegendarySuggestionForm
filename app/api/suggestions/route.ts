@@ -10,7 +10,7 @@ export async function POST(req: Request) {
     const body = await req.json()
     const { itemName, itemShortcode, enchants, skinUrl, skinImage } = body || {}
 
-    if (!itemName || !itemShortcode || !skinUrl) {
+    if (!itemName || !itemShortcode) {
       return new Response('Missing required fields', { status: 400 })
     }
 
